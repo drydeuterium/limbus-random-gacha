@@ -49,6 +49,9 @@
 
   const elements = {
     resultStage: document.querySelector("#resultStage"),
+    singleModeButton: document.querySelector("#singleModeButton"),
+    partyModeButton: document.querySelector("#partyModeButton"),
+    drawButtonLabel: document.querySelector("#drawButtonLabel"),
     drawButton: document.querySelector("#drawButton"),
     copyButton: document.querySelector("#copyButton"),
     resetButton: document.querySelector("#resetButton"),
@@ -69,6 +72,7 @@
   };
 
   const defaultState = {
+    mode: "single",
     search: "",
     rarity: "all",
     season: "all",
@@ -133,6 +137,7 @@
       }
       return {
         ...defaultState,
+        mode: saved.mode === "party" ? "party" : "single",
         search: typeof saved.search === "string" ? saved.search : "",
         rarity: ["all", "1", "2", "3"].includes(saved.rarity) ? saved.rarity : "all",
         season:
@@ -260,13 +265,26 @@
     `;
   }
 
+  function partyResultMarkup(party) {
+    elements.resultStage.style.removeProperty("--sinner-color");
+    elements.resultStage.className = "result-stage has-party-result";
+    elements.resultStage.innerHTML = `
+      <div class="result-filled party-result-filled">
+        <span class="result-status">PARTY</span>
+        <ol class="party-name-list">
+          ${party.map((persona) => `<li>${escapeHtml(persona.name)}</li>`).join("")}
+        </ol>
+      </div>
+    `;
+  }
+
   function renderEmptyResult() {
     elements.resultStage.style.removeProperty("--sinner-color");
     elements.resultStage.className = "result-stage is-empty";
     elements.resultStage.innerHTML = `
       <div class="result-empty">
         <span class="result-status">WAITING</span>
-        <p class="result-placeholder">未抽選</p>
+        <p class="result-placeholder">未抽出</p>
       </div>
     `;
   }
@@ -289,6 +307,25 @@
       elements.poolWarning.hidden = true;
       elements.poolWarning.textContent = "";
     }
+  }
+
+  function renderMode() {
+    const isParty = state.mode === "party";
+    elements.singleModeButton.classList.toggle("is-active", !isParty);
+    elements.partyModeButton.classList.toggle("is-active", isParty);
+    elements.drawButtonLabel.textContent = isParty ? "パーティを引く" : "人格を引く";
+    elements.singleModeButton.setAttribute("aria-pressed", String(!isParty));
+    elements.partyModeButton.setAttribute("aria-pressed", String(isParty));
+  }
+
+  function getPartyGroups() {
+    const groups = new Map(sinners.map((sinner) => [sinner, []]));
+    getCandidates().forEach((persona) => groups.get(persona.sinner)?.push(persona));
+    const targetSinners = state.sinners.length ? state.sinners : sinners;
+    return targetSinners.map((sinner) => ({
+      sinner,
+      candidates: groups.get(sinner) || [],
+    }));
   }
 
   function renderSinnerFilters() {
@@ -314,6 +351,10 @@
   }
 
   function draw() {
+    if (state.mode === "party") {
+      drawParty();
+      return;
+    }
     const candidates = getCandidates();
     if (!candidates.length) {
       setMessage("抽出対象がないため、引けない。", true);
@@ -334,15 +375,38 @@
     setMessage(`${persona.sinner}の「${persona.name}」を引いた。`);
   }
 
+  function drawParty() {
+    const groups = getPartyGroups();
+    const missing = groups.find(({ candidates }) => candidates.length === 0);
+    if (missing) {
+      setMessage(`囚人「${missing.sinner}」の抽出対象がないため、パーティを作れない。`, true);
+      return;
+    }
+
+    const party = groups.map(({ candidates }) => candidates[secureRandomIndex(candidates.length)]);
+    currentResult = party;
+    state.history = [
+      ...party.map((persona) => ({ id: persona.id, at: new Date().toISOString() })),
+      ...state.history,
+    ].slice(0, 200);
+    saveState();
+    partyResultMarkup(party);
+    renderPool();
+    elements.copyButton.hidden = false;
+    setMessage("パーティを抽出した。");
+  }
+
   async function copyResult() {
     if (!currentResult) {
       return;
     }
-    const text = [
-      "Limbus Company 人格単発ガチャ",
-      `${currentResult.name}（${currentResult.sinner} / ${rarityLabel(currentResult.rarity)} / ${currentResult.seasonLabel}）`,
-      currentResult.detailUrl,
-    ].join("\n");
+    const text = Array.isArray(currentResult)
+      ? ["Limbus Company パーティ抽出", ...currentResult.map((persona) => persona.name)].join("\n")
+      : [
+          "Limbus Company 人格単発ガチャ",
+          `${currentResult.name}（${currentResult.sinner} / ${rarityLabel(currentResult.rarity)} / ${currentResult.seasonLabel}）`,
+          currentResult.detailUrl,
+        ].join("\n");
 
     try {
       if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
@@ -372,6 +436,22 @@
   }
 
   elements.filterForm?.addEventListener("submit", (event) => event.preventDefault());
+  elements.singleModeButton.addEventListener("click", () => {
+    state.mode = "single";
+    currentResult = null;
+    elements.copyButton.hidden = true;
+    saveState();
+    renderMode();
+    renderEmptyResult();
+  });
+  elements.partyModeButton.addEventListener("click", () => {
+    state.mode = "party";
+    currentResult = null;
+    elements.copyButton.hidden = true;
+    saveState();
+    renderMode();
+    renderEmptyResult();
+  });
   elements.drawButton.addEventListener("click", draw);
   elements.copyButton.addEventListener("click", copyResult);
   elements.resetButton.addEventListener("click", () => {
@@ -426,6 +506,7 @@
 
   syncFilterPanelToViewport();
   applyTheme(getTheme());
+  renderMode();
   renderSinnerFilters();
   syncFormFromState();
   renderEmptyResult();
