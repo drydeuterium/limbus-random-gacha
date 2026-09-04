@@ -11,10 +11,20 @@
   const personaById = new Map(personas.map((persona) => [persona.id, persona]));
   const storageKey = "lcb-personality-picker-v1";
   const themeStorageKey = "lcb-personality-picker-theme";
-  const rarityColors = {
-    1: "#2d7772",
-    2: "#b58624",
-    3: "#d85a49",
+  const sinnerColors = {
+    イサン: "#d4e1e8",
+    ファウスト: "#ffb1b4",
+    ドンキホーテ: "#ffef23",
+    良秀: "#cf0000",
+    ムルソー: "#293b95",
+    ホンル: "#5bffde",
+    ヒースクリフ: "#4e3076",
+    イシュメール: "#ff9500",
+    ロージャ: "#820000",
+    シンクレア: "#8b9c15",
+    ウーティス: "#325339",
+    グレゴール: "#69350b",
+    ダンテ: "#b01c37",
   };
   const sinnerOrder = [
     "イサン",
@@ -53,11 +63,7 @@
     sinnerSummary: document.querySelector("#sinnerSummary"),
     excludeDrawn: document.querySelector("#excludeDrawn"),
     poolCount: document.querySelector("#poolCount"),
-    poolOdds: document.querySelector("#poolOdds"),
-    historyCount: document.querySelector("#historyCount"),
-    historySummaryCount: document.querySelector("#historySummaryCount"),
     poolWarning: document.querySelector("#poolWarning"),
-    historyList: document.querySelector("#historyList"),
     clearHistoryButton: document.querySelector("#clearHistoryButton"),
     themeToggle: document.querySelector("#themeToggle"),
   };
@@ -73,7 +79,6 @@
 
   let state = loadState();
   let currentResult = null;
-  let drawCount = 0;
 
   function getTheme() {
     try {
@@ -220,39 +225,43 @@
     return `星${rarity}`;
   }
 
-  function formatOdds(count) {
-    if (!count) {
-      return "—";
-    }
-    return `${(100 / count).toFixed(2)}%`;
-  }
-
   function resultMarkup(persona) {
-    const color = rarityColors[persona.rarity] || "#8c9186";
-    elements.resultStage.style.setProperty("--rarity-color", color);
+    const color = sinnerColors[persona.sinner] || "#8c9186";
+    elements.resultStage.style.setProperty("--sinner-color", color);
     elements.resultStage.className = "result-stage has-result";
     elements.resultStage.innerHTML = `
       <div class="result-filled">
-        <span class="result-status">RESULT / LOCKED</span>
-        <span class="result-serial">NO.${escapeHtml(persona.id)} / DRAW ${String(drawCount).padStart(2, "0")}</span>
-        <h3 class="result-name">${escapeHtml(persona.name)}</h3>
-        <div class="result-metadata">
-          <span class="result-badge"><span>囚人</span><strong>${escapeHtml(persona.sinner)}</strong></span>
-          <span class="result-badge rarity-badge"><span>レア度</span><strong>${rarityLabel(persona.rarity)}</strong></span>
-          <span class="result-badge"><span>区分</span><strong>${escapeHtml(persona.seasonLabel)}</strong></span>
-          <a
-            class="result-link"
-            href="${escapeHtml(persona.detailUrl)}"
-            target="_blank"
-            rel="noreferrer"
-          >wikiで詳細を見る</a>
-        </div>
+        <span class="result-status">DRAWN</span>
+        <dl class="result-details">
+          <div class="result-detail result-detail-name">
+            <dt>名前</dt>
+            <dd>${escapeHtml(persona.name)}</dd>
+          </div>
+          <div class="result-detail result-detail-sinner">
+            <dt>囚人</dt>
+            <dd><span class="sinner-color-mark" aria-hidden="true"></span>${escapeHtml(persona.sinner)}</dd>
+          </div>
+          <div class="result-detail">
+            <dt>レア度</dt>
+            <dd>${rarityLabel(persona.rarity)}</dd>
+          </div>
+          <div class="result-detail">
+            <dt>シーズン</dt>
+            <dd>${escapeHtml(persona.seasonLabel)}</dd>
+          </div>
+        </dl>
+        <a
+          class="result-link"
+          href="${escapeHtml(persona.detailUrl)}"
+          target="_blank"
+          rel="noreferrer"
+        >wikiで詳細を見る</a>
       </div>
     `;
   }
 
   function renderEmptyResult() {
-    elements.resultStage.style.removeProperty("--rarity-color");
+    elements.resultStage.style.removeProperty("--sinner-color");
     elements.resultStage.className = "result-stage is-empty";
     elements.resultStage.innerHTML = `
       <div class="result-empty">
@@ -267,8 +276,6 @@
     const count = candidates.length;
     const total = personas.length;
     elements.poolCount.textContent = count.toLocaleString("ja-JP");
-    elements.poolOdds.textContent = formatOdds(count);
-    elements.historyCount.textContent = state.history.length.toLocaleString("ja-JP");
     elements.drawButton.disabled = count === 0;
 
     if (!count) {
@@ -282,50 +289,6 @@
       elements.poolWarning.hidden = true;
       elements.poolWarning.textContent = "";
     }
-  }
-
-  function formatHistoryTime(timestamp) {
-    const date = new Date(timestamp);
-    if (Number.isNaN(date.getTime())) {
-      return "";
-    }
-    return date.toLocaleString("ja-JP", {
-      month: "numeric",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  }
-
-  function renderHistory() {
-    elements.historySummaryCount.textContent = `${state.history.length.toLocaleString("ja-JP")}件`;
-    if (!state.history.length) {
-      elements.historyList.innerHTML = '<p class="history-empty">まだ履歴なし。</p>';
-      return;
-    }
-
-    elements.historyList.innerHTML = state.history
-      .map((entry, index) => {
-        const persona = personaById.get(entry.id);
-        if (!persona) {
-          return "";
-        }
-        const color = rarityColors[persona.rarity] || "#8c9186";
-        return `
-          <div class="history-row">
-            <span class="history-number">#${String(index + 1).padStart(2, "0")}</span>
-            <div class="history-name">
-              ${escapeHtml(persona.name)}
-              <span>${escapeHtml(persona.sinner)} / ${escapeHtml(persona.seasonLabel)}</span>
-            </div>
-            <div class="history-meta">
-              <span class="history-rarity" style="--rarity-color: ${color}">${rarityLabel(persona.rarity)}</span>
-              <span class="history-time">${escapeHtml(formatHistoryTime(entry.at))}</span>
-            </div>
-          </div>
-        `;
-      })
-      .join("");
   }
 
   function renderSinnerFilters() {
@@ -360,14 +323,12 @@
 
     const persona = candidates[secureRandomIndex(candidates.length)];
     currentResult = persona;
-    drawCount += 1;
     state.history = [
       { id: persona.id, at: new Date().toISOString() },
       ...state.history,
     ].slice(0, 200);
     saveState();
     resultMarkup(persona);
-    renderHistory();
     renderPool();
     elements.copyButton.hidden = false;
     setMessage(`${persona.sinner}の「${persona.name}」を引いた。`);
@@ -417,14 +378,13 @@
     currentResult = null;
     elements.copyButton.hidden = true;
     renderEmptyResult();
-    setMessage("結果をリセットした。履歴は残っている。");
+    setMessage("結果を消去した。除外履歴は残っている。");
   });
   elements.clearHistoryButton.addEventListener("click", () => {
     state.history = [];
     saveState();
-    renderHistory();
     renderPool();
-    setMessage("抽選履歴を消去した。");
+    setMessage("除外履歴を消去した。");
   });
   elements.clearSinnersButton.addEventListener("click", () => {
     state.sinners = [];
@@ -469,6 +429,5 @@
   renderSinnerFilters();
   syncFormFromState();
   renderEmptyResult();
-  renderHistory();
   renderPool();
 })();
