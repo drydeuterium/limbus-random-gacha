@@ -1268,7 +1268,7 @@ main {
 }
 
 .draw-panel {
-  justify-content: center;
+  justify-content: flex-start;
   padding: 18px;
   color: var(--chrome-ink);
   background: var(--chrome);
@@ -1405,6 +1405,9 @@ main {
 
 .result-detail-name dd {
   width: 100%;
+  height: calc(2 * 1.3em);
+  min-height: calc(2 * 1.3em);
+  max-height: calc(2 * 1.3em);
   font-size: clamp(1.7rem, 3vw, 2.7rem);
   letter-spacing: -.06em;
   text-align: left;
