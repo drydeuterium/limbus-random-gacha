@@ -42,16 +42,25 @@
               <span class="section-index" aria-hidden="true">RESULT</span>
             </div>
 
+            <div class="mode-switch" role="group" aria-label="抽出モード">
+              <button id="singleModeButton" class="mode-button is-active" type="button" aria-pressed="true">
+                単発
+              </button>
+              <button id="partyModeButton" class="mode-button" type="button" aria-pressed="false">
+                パーティ
+              </button>
+            </div>
+
             <div id="resultStage" class="result-stage is-empty" aria-live="polite">
               <div class="result-empty">
                 <span class="result-status">WAITING</span>
-                <p class="result-placeholder">未抽選</p>
+                <p class="result-placeholder">未抽出</p>
               </div>
             </div>
 
             <div class="draw-controls">
               <button id="drawButton" class="draw-button" type="button">
-                <span>人格を引く</span>
+                <span id="drawButtonLabel">人格を引く</span>
                 <span class="draw-button-code">DRAW 01</span>
               </button>
               <div class="draw-secondary">
