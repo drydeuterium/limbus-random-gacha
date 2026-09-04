@@ -10,6 +10,7 @@
   const personas = dataset.personas;
   const personaById = new Map(personas.map((persona) => [persona.id, persona]));
   const storageKey = "lcb-personality-picker-v1";
+  const themeStorageKey = "lcb-personality-picker-theme";
   const rarityColors = {
     1: "#2d7772",
     2: "#b58624",
@@ -43,20 +44,22 @@
     resetButton: document.querySelector("#resetButton"),
     drawMessage: document.querySelector("#drawMessage"),
     filterForm: document.querySelector("#filterForm"),
+    filterPanel: document.querySelector("#filterPanel"),
     searchInput: document.querySelector("#searchInput"),
     raritySelect: document.querySelector("#raritySelect"),
     seasonSelect: document.querySelector("#seasonSelect"),
     sinnerFilters: document.querySelector("#sinnerFilters"),
     clearSinnersButton: document.querySelector("#clearSinnersButton"),
+    sinnerSummary: document.querySelector("#sinnerSummary"),
     excludeDrawn: document.querySelector("#excludeDrawn"),
     poolCount: document.querySelector("#poolCount"),
     poolOdds: document.querySelector("#poolOdds"),
     historyCount: document.querySelector("#historyCount"),
-    headerPoolCount: document.querySelector("#headerPoolCount"),
+    historySummaryCount: document.querySelector("#historySummaryCount"),
     poolWarning: document.querySelector("#poolWarning"),
     historyList: document.querySelector("#historyList"),
     clearHistoryButton: document.querySelector("#clearHistoryButton"),
-    dataFetchedAt: document.querySelector("#dataFetchedAt"),
+    themeToggle: document.querySelector("#themeToggle"),
   };
 
   const defaultState = {
@@ -71,6 +74,51 @@
   let state = loadState();
   let currentResult = null;
   let drawCount = 0;
+
+  function getTheme() {
+    try {
+      const saved = localStorage.getItem(themeStorageKey);
+      if (saved === "light" || saved === "dark") {
+        return saved;
+      }
+    } catch {
+      // Theme preference is a convenience only.
+    }
+    return window.matchMedia?.("(prefers-color-scheme: dark)")?.matches ? "dark" : "light";
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    elements.themeToggle.textContent = theme === "dark" ? "ライト" : "ダーク";
+    elements.themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+    elements.themeToggle.setAttribute(
+      "aria-label",
+      theme === "dark" ? "ライトモードに切り替える" : "ダークモードに切り替える",
+    );
+    document.querySelector("meta[name='theme-color']")?.setAttribute(
+      "content",
+      theme === "dark" ? "#0c0e0d" : "#d8d5cc",
+    );
+  }
+
+  function toggleTheme() {
+    const theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    try {
+      localStorage.setItem(themeStorageKey, theme);
+    } catch {
+      // Theme preference is a convenience only.
+    }
+    applyTheme(theme);
+  }
+
+  function syncFilterPanelToViewport() {
+    const isMobile = window.matchMedia?.("(max-width: 760px)")?.matches;
+    if (isMobile) {
+      elements.filterPanel.removeAttribute("open");
+    } else {
+      elements.filterPanel.setAttribute("open", "");
+    }
+  }
 
   function loadState() {
     try {
@@ -208,9 +256,8 @@
     elements.resultStage.className = "result-stage is-empty";
     elements.resultStage.innerHTML = `
       <div class="result-empty">
-        <span class="result-status">RESULT / WAITING</span>
-        <p class="result-placeholder">まだ人格を引いていない</p>
-        <p class="result-instruction">条件を決めて、下のボタンを押す。</p>
+        <span class="result-status">WAITING</span>
+        <p class="result-placeholder">未抽選</p>
       </div>
     `;
   }
@@ -222,7 +269,6 @@
     elements.poolCount.textContent = count.toLocaleString("ja-JP");
     elements.poolOdds.textContent = formatOdds(count);
     elements.historyCount.textContent = state.history.length.toLocaleString("ja-JP");
-    elements.headerPoolCount.textContent = `${count.toLocaleString("ja-JP")}人格`;
     elements.drawButton.disabled = count === 0;
 
     if (!count) {
@@ -252,9 +298,9 @@
   }
 
   function renderHistory() {
+    elements.historySummaryCount.textContent = `${state.history.length.toLocaleString("ja-JP")}件`;
     if (!state.history.length) {
-      elements.historyList.innerHTML =
-        '<p class="history-empty">ここに引いた人格が残る。結果を固定したいなら、履歴を見ながら攻略対象を決める。</p>';
+      elements.historyList.innerHTML = '<p class="history-empty">まだ履歴なし。</p>';
       return;
     }
 
@@ -283,6 +329,9 @@
   }
 
   function renderSinnerFilters() {
+    elements.sinnerSummary.textContent = state.sinners.length
+      ? `${state.sinners.length}人`
+      : "全員";
     elements.sinnerFilters.innerHTML = sinners
       .map((sinner) => {
         const checked = state.sinners.includes(sinner) ? " checked" : "";
@@ -413,11 +462,13 @@
     saveState();
     renderPool();
   });
+  elements.themeToggle.addEventListener("click", toggleTheme);
 
+  syncFilterPanelToViewport();
+  applyTheme(getTheme());
   renderSinnerFilters();
   syncFormFromState();
   renderEmptyResult();
   renderHistory();
   renderPool();
-  elements.dataFetchedAt.textContent = `（データ取得日: ${dataset.meta?.fetchedAt || "不明"}）`;
 })();
