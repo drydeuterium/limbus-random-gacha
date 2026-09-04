@@ -1324,6 +1324,34 @@ main {
   font-size: 9px;
 }
 
+.mode-switch {
+  display: flex;
+  gap: 0;
+  margin-top: 10px;
+}
+
+.mode-button {
+  min-width: 76px;
+  min-height: 34px;
+  padding: 6px 12px;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line-dark);
+  font-size: 11px;
+}
+
+.mode-button + .mode-button {
+  margin-left: -1px;
+}
+
+.mode-button.is-active {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+  background: var(--ink);
+  border-color: var(--red);
+}
+
 .result-stage {
   min-height: 0;
   margin: 12px 0;
@@ -1422,6 +1450,33 @@ main {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.result-stage.has-party-result::before {
+  background: var(--red);
+}
+
+.party-name-list {
+  display: grid;
+  width: min(100%, 38rem);
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--stage-line);
+}
+
+.party-name-list li {
+  min-width: 0;
+  min-height: 22px;
+  padding: 3px 0;
+  overflow: hidden;
+  border-bottom: 1px solid var(--stage-line);
+  color: var(--white);
+  font-size: .92rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .sinner-color-mark {
