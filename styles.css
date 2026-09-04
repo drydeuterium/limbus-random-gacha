@@ -1184,6 +1184,9 @@ summary:focus-visible {
 }
 
 .site-header {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
   flex: 0 0 auto;
   min-height: 58px;
   color: var(--chrome-ink);
@@ -1192,6 +1195,8 @@ summary:focus-visible {
 }
 
 .brand {
+  flex: 1;
+  min-width: 0;
   gap: 10px;
   padding: 9px 16px;
 }
@@ -1270,6 +1275,7 @@ main {
 }
 
 .draw-panel {
+  justify-content: center;
   padding: 18px;
   color: var(--chrome-ink);
   background: var(--chrome);
@@ -1334,7 +1340,7 @@ main {
 
 .result-stage::before {
   width: 5px;
-  background: var(--rarity-color, #596258);
+  background: var(--sinner-color, #596258);
 }
 
 .result-empty,
@@ -1364,25 +1370,70 @@ main {
   justify-content: center;
 }
 
-.result-serial {
-  margin-top: 9px;
-  font-size: 10px;
+.result-stage {
+  height: clamp(300px, calc(100svh - 330px), 560px);
+  flex: 0 1 auto;
 }
 
-.result-name {
-  margin: 11px 0 18px;
-  font-size: clamp(2rem, 4.5vw, 4rem);
+.result-details {
+  display: grid;
+  margin: 14px 0 0;
+  border-top: 1px solid var(--stage-line);
 }
 
-.result-metadata {
-  gap: 6px;
+.result-detail {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  min-height: 43px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--stage-line);
 }
 
-.result-badge,
+.result-detail dt {
+  color: #aeb5aa;
+  font: 700 10px/1.3 "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  letter-spacing: .08em;
+}
+
+.result-detail dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.result-detail-name dd {
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  letter-spacing: -.06em;
+}
+
+.result-detail-sinner dd {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sinner-color-mark {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 12px;
+  height: 24px;
+  background: var(--sinner-color, #8c9186);
+  border: 1px solid rgb(255 255 255 / 45%);
+}
+
 .result-link {
-  min-height: 30px;
-  padding: 4px 8px;
-  font-size: 11px;
+  align-self: flex-start;
+  min-height: 32px;
+  margin-top: 11px;
+  padding: 4px 0;
+  color: #d8ddd4;
+  font-size: 12px;
 }
 
 .draw-controls {
@@ -1563,10 +1614,6 @@ main {
 }
 
 .pool-readout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 10px;
-  align-items: center;
   margin-top: auto;
   padding-top: 10px;
   border-top: 2px solid var(--ink);
@@ -1586,20 +1633,6 @@ main {
 
 .pool-readout-main strong {
   font-size: 29px;
-}
-
-.pool-readout dl {
-  grid-template-columns: repeat(2, auto);
-  gap: 12px;
-  margin-top: 0;
-}
-
-.pool-readout dt {
-  font-size: 9px;
-}
-
-.pool-readout dd {
-  font-size: 11px;
 }
 
 .pool-warning {
@@ -1718,6 +1751,17 @@ main {
   display: none;
 }
 
+.filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 2px;
+}
+
+.state-reset {
+  min-height: 28px;
+  color: var(--muted);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1808,7 +1852,7 @@ main {
 
   .result-stage {
     flex: none;
-    height: 220px;
+    height: 300px;
     margin: 10px 0;
   }
 
@@ -1818,18 +1862,27 @@ main {
   }
 
   .result-placeholder {
-    font-size: 2.1rem;
+    font-size: 2rem;
   }
 
-  .result-name {
-    margin: 8px 0 14px;
-    font-size: 2.4rem;
+  .result-detail {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 12px;
+    min-height: 38px;
+    padding: 6px 0;
   }
 
-  .result-badge,
-  .result-link {
-    min-height: 28px;
-    font-size: 10px;
+  .result-detail dd {
+    font-size: 1rem;
+  }
+
+  .result-detail-name dd {
+    font-size: 1.9rem;
+  }
+
+  .sinner-color-mark {
+    width: 10px;
+    height: 20px;
   }
 
   .draw-controls {
@@ -1867,11 +1920,16 @@ main {
   }
 
   .result-stage {
-    height: 195px;
+    height: 285px;
   }
 
-  .result-name {
-    font-size: 2.05rem;
+  .result-filled {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .result-detail-name dd {
+    font-size: 1.75rem;
   }
 
   .sinner-grid {
@@ -1885,7 +1943,7 @@ main {
   }
 
   .result-stage {
-    height: 180px;
+    height: 270px;
   }
 
   .result-empty,
@@ -1894,7 +1952,7 @@ main {
     padding-left: 18px;
   }
 
-  .result-name {
-    font-size: 1.85rem;
+  .result-detail-name dd {
+    font-size: 1.6rem;
   }
 }
