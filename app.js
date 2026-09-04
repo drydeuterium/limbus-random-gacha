@@ -272,7 +272,20 @@
       <div class="result-filled party-result-filled">
         <span class="result-status">PARTY</span>
         <ol class="party-name-list">
-          ${party.map((persona) => `<li>${escapeHtml(persona.name)}</li>`).join("")}
+          ${party
+            .map((persona) => {
+              const color = sinnerColors[persona.sinner] || "#8c9186";
+              return `
+                <li>
+                  <span class="party-sinner">
+                    <span class="party-sinner-mark" style="--sinner-color: ${color}" aria-hidden="true"></span>
+                    ${escapeHtml(persona.sinner)}
+                  </span>
+                  <span class="party-persona-name">${escapeHtml(persona.name)}</span>
+                </li>
+              `;
+            })
+            .join("")}
         </ol>
       </div>
     `;
@@ -401,7 +414,10 @@
       return;
     }
     const text = Array.isArray(currentResult)
-      ? ["Limbus Company パーティ抽出", ...currentResult.map((persona) => persona.name)].join("\n")
+      ? [
+          "Limbus Company パーティ抽出",
+          ...currentResult.map((persona) => `${persona.sinner} / ${persona.name}`),
+        ].join("\n")
       : [
           "Limbus Company 人格単発ガチャ",
           `${currentResult.name}（${currentResult.sinner} / ${rarityLabel(currentResult.rarity)} / ${currentResult.seasonLabel}）`,
