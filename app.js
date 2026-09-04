@@ -342,7 +342,7 @@
       "Limbus Company 人格単発ガチャ",
       `${currentResult.name}（${currentResult.sinner} / ${rarityLabel(currentResult.rarity)} / ${currentResult.seasonLabel}）`,
       currentResult.detailUrl,
-    ].join("\\n");
+    ].join("\n");
 
     try {
       if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
