@@ -316,7 +316,7 @@
   function draw() {
     const candidates = getCandidates();
     if (!candidates.length) {
-      setMessage("抽選対象がないため、引けない。", true);
+      setMessage("抽出対象がないため、引けない。", true);
       renderPool();
       return;
     }
