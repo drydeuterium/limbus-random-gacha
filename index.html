@@ -21,60 +21,31 @@
             <span class="brand-title">人格単発ガチャ</span>
           </span>
         </a>
-        <div class="header-source">
-          <span class="header-source-label">DATA REGISTER</span>
+        <div class="header-actions">
           <a
+            class="header-source"
             href="https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC"
             target="_blank"
             rel="noreferrer"
-          >lcbwiki 人格一覧</a>
+          >wiki一覧</a>
+          <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+            ダーク
+          </button>
         </div>
       </header>
 
       <main>
-        <section class="intro" aria-labelledby="page-title">
-          <div class="intro-copy">
-            <p class="eyebrow">PERSONALITY SELECTION / 01</p>
-            <h1 id="page-title">次のソロ攻略で使う人格を、<em>1回だけ</em>引く。</h1>
-            <p class="intro-lede">
-              wikiの人格一覧を抽選対象にして、条件に合う人格を均等に1人選ぶ。
-              結果を決めたら、その人格で攻略を始める。
-            </p>
-          </div>
-          <div class="rule-note" aria-label="抽選ルール">
-            <div class="rule-note-head">
-              <span>RULE NOTE</span>
-              <span class="rule-note-mark" aria-hidden="true">01</span>
-            </div>
-            <p>ゲーム内ガチャの排出率は再現しない。これはソロ攻略用のくじだ。</p>
-            <dl>
-              <div>
-                <dt>方式</dt>
-                <dd>単発 / 等確率</dd>
-              </div>
-              <div>
-                <dt>対象</dt>
-                <dd id="headerPoolCount">185人格</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-
         <div class="workbench">
           <section class="draw-panel" aria-labelledby="draw-heading">
             <div class="section-bar">
-              <div>
-                <p class="eyebrow">DRAWING FLOOR</p>
-                <h2 id="draw-heading">抽選結果</h2>
-              </div>
-              <span class="section-index" aria-hidden="true">A / 01</span>
+              <h2 id="draw-heading">抽選結果</h2>
+              <span class="section-index" aria-hidden="true">RESULT</span>
             </div>
 
             <div id="resultStage" class="result-stage is-empty" aria-live="polite">
               <div class="result-empty">
-                <span class="result-status">RESULT / WAITING</span>
-                <p class="result-placeholder">まだ人格を引いていない</p>
-                <p class="result-instruction">条件を決めて、下のボタンを押す。</p>
+                <span class="result-status">WAITING</span>
+                <p class="result-placeholder">未抽選</p>
               </div>
             </div>
 
@@ -89,20 +60,34 @@
               </div>
             </div>
             <p id="drawMessage" class="draw-message" role="status"></p>
+
+            <details id="historySection" class="history-section">
+              <summary class="history-summary">
+                <span>
+                  <span class="history-summary-label">履歴</span>
+                  <span id="historySummaryCount" class="history-summary-count">0件</span>
+                </span>
+                <span class="history-summary-arrow" aria-hidden="true">＋</span>
+              </summary>
+              <div class="history-content">
+                <div class="history-actions">
+                  <span id="history-heading" class="sr-only">抽選履歴</span>
+                  <button id="clearHistoryButton" class="text-button" type="button">履歴を消去</button>
+                </div>
+                <div id="historyList" class="history-list" aria-live="polite"></div>
+              </div>
+            </details>
           </section>
 
-          <aside class="filter-panel" aria-labelledby="filter-heading">
-            <div class="section-bar">
-              <div>
-                <p class="eyebrow">POOL CONFIGURATION</p>
-                <h2 id="filter-heading">抽選条件</h2>
-              </div>
-              <span class="section-index" aria-hidden="true">B / 01</span>
-            </div>
+          <details id="filterPanel" class="filter-panel" open>
+            <summary class="section-bar">
+              <h2 id="filter-heading">抽選条件</h2>
+              <span class="section-index" aria-hidden="true">FILTER</span>
+            </summary>
 
             <form id="filterForm">
               <div class="field">
-                <label for="searchInput">人格名・囚人で絞る</label>
+                <label for="searchInput">人格名・囚人</label>
                 <input
                   id="searchInput"
                   type="search"
@@ -138,27 +123,29 @@
                 </div>
               </div>
 
-              <fieldset class="sinner-fieldset">
-                <legend>囚人 <span>未選択なら全員</span></legend>
-                <div id="sinnerFilters" class="sinner-grid"></div>
-                <button id="clearSinnersButton" class="small-button" type="button">全囚人に戻す</button>
-              </fieldset>
+              <details class="advanced-filters">
+                <summary>
+                  <span>囚人を指定</span>
+                  <span id="sinnerSummary" class="advanced-summary-value">全員</span>
+                </summary>
+                <div class="advanced-filters-content">
+                  <div id="sinnerFilters" class="sinner-grid"></div>
+                  <button id="clearSinnersButton" class="small-button" type="button">全員</button>
+                </div>
+              </details>
 
               <div class="toggle-list">
                 <label class="toggle-row" for="excludeDrawn">
                   <input id="excludeDrawn" type="checkbox">
                   <span class="fake-toggle" aria-hidden="true"></span>
-                  <span>
-                    <strong>引いた人格を次回から除外</strong>
-                    <small>履歴をリセットすると再び対象になる</small>
-                  </span>
+                  <strong>引いた人格を除外</strong>
                 </label>
               </div>
             </form>
 
             <div class="pool-readout" aria-live="polite">
               <div class="pool-readout-main">
-                <span>現在の抽選対象</span>
+                <span>抽選対象</span>
                 <strong id="poolCount">185</strong>
                 <span>人格</span>
               </div>
@@ -174,51 +161,9 @@
               </dl>
             </div>
             <p id="poolWarning" class="pool-warning" role="alert" hidden></p>
-          </aside>
+          </details>
         </div>
-
-        <section class="history-section" aria-labelledby="history-heading">
-          <div class="section-bar">
-            <div>
-              <p class="eyebrow">DRAW LOG</p>
-              <h2 id="history-heading">抽選履歴</h2>
-            </div>
-            <button id="clearHistoryButton" class="text-button" type="button">履歴を消去</button>
-          </div>
-          <div id="historyList" class="history-list" aria-live="polite"></div>
-        </section>
-
-        <details class="data-note">
-          <summary>データと抽選について</summary>
-          <div class="data-note-content">
-            <p>
-              人格名・囚人・星・シーズンは、lcbwikiの人格一覧を取得した固定スナップショット。
-              このページでは、画像・スキル説明・ゲーム内の排出率や入手可能性は扱わない。
-            </p>
-            <p>
-              抽選は現在の条件に含まれる人格を等確率で1件選ぶ。更新時は
-              <code>python3 scripts/update-data.py</code> を実行してデータを再取得する。
-            </p>
-            <p>
-              GitHub Pagesなどで公開する場合は、出典元の転載方針と各権利者の条件を確認すること。
-            </p>
-            <p class="data-note-source">
-              出典：
-              <a
-                href="https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC"
-                target="_blank"
-                rel="noreferrer"
-              >LimbusCompany攻略 Wiki*「人格」</a>
-              <span id="dataFetchedAt"></span>
-            </p>
-          </div>
-        </details>
       </main>
-
-      <footer class="site-footer">
-        <span>PERSONAL TOOL / LOCAL STATE ONLY</span>
-        <span>Not affiliated with Project Moon.</span>
-      </footer>
     </div>
 
     <script src="data/personas.js"></script>
