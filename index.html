@@ -60,23 +60,6 @@
               </div>
             </div>
             <p id="drawMessage" class="draw-message" role="status"></p>
-
-            <details id="historySection" class="history-section">
-              <summary class="history-summary">
-                <span>
-                  <span class="history-summary-label">履歴</span>
-                  <span id="historySummaryCount" class="history-summary-count">0件</span>
-                </span>
-                <span class="history-summary-arrow" aria-hidden="true">＋</span>
-              </summary>
-              <div class="history-content">
-                <div class="history-actions">
-                  <span id="history-heading" class="sr-only">抽選履歴</span>
-                  <button id="clearHistoryButton" class="text-button" type="button">履歴を消去</button>
-                </div>
-                <div id="historyList" class="history-list" aria-live="polite"></div>
-              </div>
-            </details>
           </section>
 
           <details id="filterPanel" class="filter-panel" open>
@@ -141,6 +124,10 @@
                   <strong>引いた人格を除外</strong>
                 </label>
               </div>
+
+              <div class="filter-actions">
+                <button id="clearHistoryButton" class="small-button state-reset" type="button">除外履歴を消去</button>
+              </div>
             </form>
 
             <div class="pool-readout" aria-live="polite">
@@ -149,16 +136,6 @@
                 <strong id="poolCount">185</strong>
                 <span>人格</span>
               </div>
-              <dl>
-                <div>
-                  <dt>1人格あたり</dt>
-                  <dd id="poolOdds">0.54%</dd>
-                </div>
-                <div>
-                  <dt>抽選履歴</dt>
-                  <dd id="historyCount">0</dd>
-                </div>
-              </dl>
             </div>
             <p id="poolWarning" class="pool-warning" role="alert" hidden></p>
           </details>
