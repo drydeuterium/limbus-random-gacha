@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>人格抽出 · レスポンシブ検証</title>
+<style>
+body{margin:0;background:#808078;font:14px system-ui;color:#fff}
+header{padding:12px;display:flex;gap:16px;align-items:center}
+select{font:inherit;padding:8px}iframe{display:block;border:0;background:#151614;margin:0 auto}
+</style>
+<header><label>表示幅 <select id="size"><option value="375">375 × 812</option><option value="320">320 × 568</option><option value="768">768 × 1024</option><option value="1440">1440 × 900</option></select></label><span>検証用 · 本体と同じ画面</span></header>
+<iframe id="preview" title="人格抽出プレビュー" src="../index.html" width="375" height="812"></iframe>
+<script>
+const size = document.getElementById("size");
+const frame = document.getElementById("preview");
+size.addEventListener("change", () => {
+frame.width = size.value;
+frame.height = {"320":568,"375":812,"768":1024,"1440":900}[size.value];
+});
+</script>
+</html>

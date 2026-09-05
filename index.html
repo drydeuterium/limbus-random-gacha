@@ -1,158 +1,89 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#191a18">
-    <meta
-      name="description"
-      content="Limbus Companyの人格一覧から、ソロ攻略用の人格を一回だけ抽出するツール"
-    >
-    <title>人格単発ガチャ — Limbus Company</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <div class="site-frame">
-      <header class="site-header">
-        <a class="brand" href="./" aria-label="人格単発ガチャのトップへ">
-          <span class="brand-mark" aria-hidden="true">LCB</span>
-          <span class="brand-copy">
-            <span class="brand-eyebrow">SOLO RUN / SINGLE DRAW</span>
-            <span class="brand-title">人格単発ガチャ</span>
-          </span>
-        </a>
-        <div class="header-actions">
-          <a
-            class="header-source"
-            href="https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC"
-            target="_blank"
-            rel="noreferrer"
-          >wiki一覧</a>
-          <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
-            ダーク
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151614">
+  <meta name="description" content="Limbus Companyの人格を等確率で抽出。単発と囚人ごとのパーティ抽出に対応。">
+  <title>人格抽出 — Limbus Company</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="data/personas.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">LCB</span>
+        <div><p class="brand-caption">LIMBUS COMPANY</p><h1>人格抽出</h1></div>
+      </div>
+      <nav class="header-actions" aria-label="関連リンクと表示">
+        <a href="https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC" target="_blank" rel="noreferrer">wiki一覧 <span aria-hidden="true">↗</span></a>
+        <button id="themeToggle" class="quiet-button" type="button" aria-pressed="false">ダーク</button>
+      </nav>
+    </header>
+
+    <main class="workspace">
+      <details id="filterPanel" class="filter-panel" open>
+        <summary><span>抽出条件</span><span id="filterSummary" class="filter-summary">すべて</span></summary>
+        <form id="filterForm">
+          <div class="field">
+            <label for="searchInput">人格名・囚人</label>
+            <input id="searchInput" type="search" placeholder="名前で絞る" autocomplete="off">
+          </div>
+          <div class="field-pair">
+            <div class="field">
+              <label for="raritySelect">レア度</label>
+              <select id="raritySelect"><option value="all">すべて</option><option value="3">星3</option><option value="2">星2</option><option value="1">星1</option></select>
+            </div>
+            <div class="field">
+              <label for="seasonSelect">シーズン</label>
+              <select id="seasonSelect"><option value="all">すべて</option></select>
+            </div>
+          </div>
+          <fieldset>
+            <legend>囚人 <span id="sinnerSummary">全員</span></legend>
+            <div id="sinnerFilters" class="sinner-grid"></div>
+            <button id="clearSinnersButton" class="text-button" type="button">全員に戻す</button>
+          </fieldset>
+          <div class="exclusion-control">
+            <label class="checkbox-label" for="excludeDrawn">
+              <input id="excludeDrawn" type="checkbox">
+              <span>引いた人格を除外</span>
+            </label>
+            <button id="clearHistoryButton" class="text-button" type="button">除外を解除</button>
+          </div>
+          <button id="resetFiltersButton" class="quiet-button reset-filters" type="button">条件をリセット</button>
+        </form>
+      </details>
+
+      <section class="draw-panel" aria-label="人格の抽出">
+        <div class="draw-toolbar">
+          <div class="mode-switch" role="group" aria-label="抽出モード">
+            <button id="singleModeButton" class="mode-button" type="button" aria-pressed="true">単発</button>
+            <button id="partyModeButton" class="mode-button" type="button" aria-pressed="false">パーティ</button>
+          </div>
+          <button id="drawButton" class="draw-button" type="button" aria-describedby="poolWarning">
+            <span id="drawButtonLabel">抽出する</span><span aria-hidden="true">↗</span>
           </button>
         </div>
-      </header>
+        <div class="pool-readout"><span>抽出対象 <strong id="poolCount">—</strong> 人格</span><span id="modeNote">等確率 · 1人格</span></div>
+        <p id="poolWarning" class="notice" role="status" hidden></p>
 
-      <main>
-        <div class="workbench">
-          <section class="draw-panel" aria-labelledby="draw-heading">
-            <div class="section-bar">
-              <h2 id="draw-heading">抽出結果</h2>
-              <span class="section-index" aria-hidden="true">RESULT</span>
-            </div>
-
-            <div class="mode-switch" role="group" aria-label="抽出モード">
-              <button id="singleModeButton" class="mode-button is-active" type="button" aria-pressed="true">
-                単発
-              </button>
-              <button id="partyModeButton" class="mode-button" type="button" aria-pressed="false">
-                パーティ
-              </button>
-            </div>
-
-            <div id="resultStage" class="result-stage is-empty" aria-live="polite">
-              <div class="result-empty">
-                <span class="result-status">WAITING</span>
-                <p class="result-placeholder">未抽出</p>
-              </div>
-            </div>
-
-            <div class="draw-controls">
-              <button id="drawButton" class="draw-button" type="button">
-                <span id="drawButtonLabel">人格を引く</span>
-                <span class="draw-button-code">DRAW 01</span>
-              </button>
-              <div class="draw-secondary">
-                <button id="copyButton" class="text-button" type="button" hidden>結果をコピー</button>
-                <button id="resetButton" class="text-button" type="button">結果をリセット</button>
-              </div>
-            </div>
-            <p id="drawMessage" class="sr-only" role="status" aria-live="polite"></p>
-          </section>
-
-          <details id="filterPanel" class="filter-panel" open>
-            <summary class="section-bar">
-              <h2 id="filter-heading">抽出条件</h2>
-              <span class="section-index" aria-hidden="true">FILTER</span>
-            </summary>
-
-            <form id="filterForm">
-              <div class="field">
-                <label for="searchInput">人格名・囚人</label>
-                <input
-                  id="searchInput"
-                  type="search"
-                  autocomplete="off"
-                  placeholder="例：ホンル / 黒雲会"
-                >
-              </div>
-
-              <div class="field-row">
-                <div class="field">
-                  <label for="raritySelect">星</label>
-                  <select id="raritySelect">
-                    <option value="all">すべて</option>
-                    <option value="3">星3</option>
-                    <option value="2">星2</option>
-                    <option value="1">星1</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="seasonSelect">シーズン</label>
-                  <select id="seasonSelect">
-                    <option value="all">すべて</option>
-                    <option value="0">恒常</option>
-                    <option value="1">Season 1</option>
-                    <option value="2">Season 2</option>
-                    <option value="3">Season 3</option>
-                    <option value="4">Season 4</option>
-                    <option value="5">Season 5</option>
-                    <option value="6">Season 6</option>
-                    <option value="7">Season 7</option>
-                    <option value="W">ヴァルプルギスの夜</option>
-                  </select>
-                </div>
-              </div>
-
-              <details class="advanced-filters">
-                <summary>
-                  <span>囚人を指定</span>
-                  <span id="sinnerSummary" class="advanced-summary-value">全員</span>
-                </summary>
-                <div class="advanced-filters-content">
-                  <div id="sinnerFilters" class="sinner-grid"></div>
-                  <button id="clearSinnersButton" class="small-button" type="button">全員</button>
-                </div>
-              </details>
-
-              <div class="toggle-list">
-                <label class="toggle-row" for="excludeDrawn">
-                  <input id="excludeDrawn" type="checkbox">
-                  <span class="fake-toggle" aria-hidden="true"></span>
-                  <strong>引いた人格を除外</strong>
-                </label>
-              </div>
-
-              <div class="filter-actions">
-                <button id="clearHistoryButton" class="small-button state-reset" type="button">除外履歴を消去</button>
-              </div>
-            </form>
-
-            <div class="pool-readout" aria-live="polite">
-              <div class="pool-readout-main">
-                <span>抽出対象</span>
-                <strong id="poolCount">185</strong>
-                <span>人格</span>
-              </div>
-            </div>
-            <p id="poolWarning" class="pool-warning" role="alert" hidden></p>
-          </details>
+        <div class="result-heading">
+          <h2>抽出結果</h2>
+          <div class="result-actions">
+            <button id="copyButton" class="text-button" type="button" disabled>コピー</button>
+            <button id="resetButton" class="text-button" type="button" disabled>クリア</button>
+          </div>
         </div>
-      </main>
-    </div>
-
-    <script src="data/personas.js"></script>
-    <script src="app.js"></script>
-  </body>
+        <div id="resultStage" class="result-stage" aria-live="polite" aria-atomic="true"></div>
+        <p id="actionNotice" class="notice" role="status" hidden></p>
+        <p id="drawMessage" class="sr-only" role="status"></p>
+      </section>
+    </main>
+    <footer class="app-footer"><span>攻略用ランダム選択 · ゲーム内排出率とは異なる</span><span id="dataDate"></span></footer>
+    <noscript>抽出にはJavaScriptを有効にする必要がある。</noscript>
+  </div>
+</body>
 </html>
