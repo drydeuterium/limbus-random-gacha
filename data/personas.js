@@ -2,7 +2,7 @@ window.LCB_PERSONA_DATA = {
   "meta": {
     "sourceUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC",
     "templateUrl": "https://wikiwiki.jp/lcbwiki/%3ATemplate/%E4%BA%BA%E6%A0%BC",
-    "fetchedAt": "2026-09-04",
+    "fetchedAt": "2026-09-10",
     "count": 185
   },
   "personas": [
