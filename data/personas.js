@@ -2,235 +2,10 @@ window.LCB_PERSONA_DATA = {
   "meta": {
     "sourceUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC",
     "templateUrl": "https://wikiwiki.jp/lcbwiki/%3ATemplate/%E4%BA%BA%E6%A0%BC",
-    "fetchedAt": "2026-09-10",
+    "fetchedAt": "2026-09-17",
     "count": 185
   },
   "personas": [
-    {
-      "id": "0616",
-      "name": "東部センク協会3課",
-      "sinner": "ホンル",
-      "season": "0",
-      "seasonLabel": "恒常",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%9B%E3%83%B3%E3%83%AB/%E6%9D%B1%E9%83%A8%E3%82%BB%E3%83%B3%E3%82%AF%E5%8D%94%E4%BC%9A3%E8%AA%B2"
-    },
-    {
-      "id": "0116",
-      "name": "LCE E.G.O:: 次元裂き",
-      "sinner": "イサン",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A4%E3%82%B5%E3%83%B3/LCEE.G.O/%E6%AC%A1%E5%85%83%E8%A3%82%E3%81%8D"
-    },
-    {
-      "id": "1216",
-      "name": "夜明事務所代表",
-      "sinner": "グレゴール",
-      "season": "W",
-      "seasonLabel": "ヴァルプルギスの夜",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%B0%E3%83%AC%E3%82%B4%E3%83%BC%E3%83%AB/%E5%A4%9C%E6%98%8E%E4%BA%8B%E5%8B%99%E6%89%80%E4%BB%A3%E8%A1%A8"
-    },
-    {
-      "id": "0216",
-      "name": "夜明事務所フィクサー",
-      "sinner": "ファウスト",
-      "season": "W",
-      "seasonLabel": "ヴァルプルギスの夜",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%95%E3%82%A1%E3%82%A6%E3%82%B9%E3%83%88/%E5%A4%9C%E6%98%8E%E4%BA%8B%E5%8B%99%E6%89%80%E3%83%95%E3%82%A3%E3%82%AF%E3%82%B5%E3%83%BC"
-    },
-    {
-      "id": "0916",
-      "name": "蜘蛛の巣 親指の親方",
-      "sinner": "ロージャ",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%AD%E3%83%BC%E3%82%B8%E3%83%A3/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E8%A6%AA%E6%8C%87%E3%81%AE%E8%A6%AA%E6%96%B9"
-    },
-    {
-      "id": "0716",
-      "name": "蜘蛛の巣 親指の子方",
-      "sinner": "ヒースクリフ",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%92%E3%83%BC%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%95/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E8%A6%AA%E6%8C%87%E3%81%AE%E5%AD%90%E6%96%B9"
-    },
-    {
-      "id": "0615",
-      "name": "S社チュノックン",
-      "sinner": "ホンル",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%9B%E3%83%B3%E3%83%AB/S%E7%A4%BE%E3%83%81%E3%83%A5%E3%83%8E%E3%83%83%E3%82%AF%E3%83%B3"
-    },
-    {
-      "id": "0815",
-      "name": "LCD現場推理チーム",
-      "sinner": "イシュメール",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A4%E3%82%B7%E3%83%A5%E3%83%A1%E3%83%BC%E3%83%AB/LCD%E7%8F%BE%E5%A0%B4%E6%8E%A8%E7%90%86%E3%83%81%E3%83%BC%E3%83%A0"
-    },
-    {
-      "id": "1115",
-      "name": "蜘蛛の巣 中指の親方",
-      "sinner": "ウーティス",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%82%B9/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E4%B8%AD%E6%8C%87%E3%81%AE%E8%A6%AA%E6%96%B9"
-    },
-    {
-      "id": "0415",
-      "name": "蜘蛛の巣の刀",
-      "sinner": "良秀",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E8%89%AF%E7%A7%80/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E3%81%AE%E5%88%80"
-    },
-    {
-      "id": "0715",
-      "name": "中指末兄",
-      "sinner": "ヒースクリフ",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%92%E3%83%BC%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%95/%E4%B8%AD%E6%8C%87%E6%9C%AB%E5%85%84"
-    },
-    {
-      "id": "0915",
-      "name": "薬指野獣派 ドーセント",
-      "sinner": "ロージャ",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%AD%E3%83%BC%E3%82%B8%E3%83%A3/%E8%96%AC%E6%8C%87%E9%87%8E%E7%8D%A3%E6%B4%BE%E3%83%89%E3%83%BC%E3%82%BB%E3%83%B3%E3%83%88"
-    },
-    {
-      "id": "0515",
-      "name": "薬指野獣派 スチューデント",
-      "sinner": "ムルソー",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%A0%E3%83%AB%E3%82%BD%E3%83%BC/%E8%96%AC%E6%8C%87%E9%87%8E%E7%8D%A3%E6%B4%BE%E3%82%B9%E3%83%81%E3%83%A5%E3%83%BC%E3%83%87%E3%83%B3%E3%83%88"
-    },
-    {
-      "id": "0614",
-      "name": "蜘蛛の巣 薬指の親方",
-      "sinner": "ホンル",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%9B%E3%83%B3%E3%83%AB/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E8%96%AC%E6%8C%87%E3%81%AE%E8%A6%AA%E6%96%B9"
-    },
-    {
-      "id": "0215",
-      "name": "蜘蛛の巣 薬指の子方",
-      "sinner": "ファウスト",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%95%E3%82%A1%E3%82%A6%E3%82%B9%E3%83%88/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E8%96%AC%E6%8C%87%E3%81%AE%E5%AD%90%E6%96%B9"
-    },
-    {
-      "id": "1215",
-      "name": "LCE E.G.O::AEDD",
-      "sinner": "グレゴール",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%B0%E3%83%AC%E3%82%B4%E3%83%BC%E3%83%AB/LCEE.G.O/AEDD"
-    },
-    {
-      "id": "0414",
-      "name": "ロボトミーE.G.O:: 残香・寂しさ",
-      "sinner": "良秀",
-      "season": "W",
-      "seasonLabel": "ヴァルプルギスの夜",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E8%89%AF%E7%A7%80/%E3%83%AD%E3%83%9C%E3%83%88%E3%83%9F%E3%83%BCE.G.O/%E6%AE%8B%E9%A6%99%E3%83%BB%E5%AF%82%E3%81%97%E3%81%95"
-    },
-    {
-      "id": "0514",
-      "name": "ロボトミーE.G.O:: ホーネット【変調】",
-      "sinner": "ムルソー",
-      "season": "W",
-      "seasonLabel": "ヴァルプルギスの夜",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%A0%E3%83%AB%E3%82%BD%E3%83%BC/%E3%83%AD%E3%83%9C%E3%83%88%E3%83%9F%E3%83%BCE.G.O/%E3%83%9B%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%80%90%E5%A4%89%E8%AA%BF%E3%80%91"
-    },
-    {
-      "id": "0115",
-      "name": "蜘蛛の巣 人差し指の親方",
-      "sinner": "イサン",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A4%E3%82%B5%E3%83%B3/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E4%BA%BA%E5%B7%AE%E3%81%97%E6%8C%87%E3%81%AE%E8%A6%AA%E6%96%B9"
-    },
-    {
-      "id": "1015",
-      "name": "蜘蛛の巣 小指の子方",
-      "sinner": "シンクレア",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%B7%E3%83%B3%E3%82%AF%E3%83%AC%E3%82%A2/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E5%B0%8F%E6%8C%87%E3%81%AE%E5%AD%90%E6%96%B9"
-    },
-    {
-      "id": "1214",
-      "name": "ロボトミーE.G.O:: ランプ",
-      "sinner": "グレゴール",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%B0%E3%83%AC%E3%82%B4%E3%83%BC%E3%83%AB/%E3%83%AD%E3%83%9C%E3%83%88%E3%83%9F%E3%83%BCE.G.O/%E3%83%A9%E3%83%B3%E3%83%97"
-    },
-    {
-      "id": "0814",
-      "name": "蜘蛛の巣 中指の子方",
-      "sinner": "イシュメール",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A4%E3%82%B7%E3%83%A5%E3%83%A1%E3%83%BC%E3%83%AB/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E4%B8%AD%E6%8C%87%E3%81%AE%E5%AD%90%E6%96%B9"
-    },
-    {
-      "id": "0314",
-      "name": "人差し指代行者- 開花E.G.O::代行",
-      "sinner": "ドンキホーテ",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%89%E3%83%B3%E3%82%AD%E3%83%9B%E3%83%BC%E3%83%86/%E4%BA%BA%E5%B7%AE%E3%81%97%E6%8C%87%E4%BB%A3%E8%A1%8C%E8%80%85-%E9%96%8B%E8%8A%B1E.G.O/%E4%BB%A3%E8%A1%8C"
-    },
-    {
-      "id": "0214",
-      "name": "人差し指遂行者：【紙片】",
-      "sinner": "ファウスト",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%95%E3%82%A1%E3%82%A6%E3%82%B9%E3%83%88/%E4%BA%BA%E5%B7%AE%E3%81%97%E6%8C%87%E9%81%82%E8%A1%8C%E8%80%85%EF%BC%9A%E3%80%90%E7%B4%99%E7%89%87%E3%80%91"
-    },
-    {
-      "id": "1114",
-      "name": "LCAウアジェト 先鋒三隊隊長",
-      "sinner": "ウーティス",
-      "season": "7",
-      "seasonLabel": "Season 7",
-      "rarity": 3,
-      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%82%B9/LCA%E3%82%A6%E3%82%A2%E3%82%B8%E3%82%A7%E3%83%88%E5%85%88%E9%8B%92%E4%B8%89%E9%9A%8A%E9%9A%8A%E9%95%B7"
-    },
     {
       "id": "0101",
       "name": "LCB囚人",
@@ -358,6 +133,24 @@ window.LCB_PERSONA_DATA = {
       "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A4%E3%82%B5%E3%83%B3/%E9%BB%92%E7%8D%A3-%E5%8D%88%E7%AD%86%E9%A0%AD"
     },
     {
+      "id": "0115",
+      "name": "蜘蛛の巣 人差し指の親方",
+      "sinner": "イサン",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A4%E3%82%B5%E3%83%B3/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E4%BA%BA%E5%B7%AE%E3%81%97%E6%8C%87%E3%81%AE%E8%A6%AA%E6%96%B9"
+    },
+    {
+      "id": "0116",
+      "name": "LCE E.G.O:: 次元裂き",
+      "sinner": "イサン",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A4%E3%82%B5%E3%83%B3/LCEE.G.O/%E6%AC%A1%E5%85%83%E8%A3%82%E3%81%8D"
+    },
+    {
       "id": "0201",
       "name": "LCB囚人",
       "sinner": "ファウスト",
@@ -473,6 +266,33 @@ window.LCB_PERSONA_DATA = {
       "seasonLabel": "恒常",
       "rarity": 3,
       "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%95%E3%82%A1%E3%82%A6%E3%82%B9%E3%83%88/%E6%9D%B1%E9%83%A8%E3%82%B7%E5%8D%94%E4%BC%9A3%E8%AA%B2"
+    },
+    {
+      "id": "0214",
+      "name": "人差し指遂行者：【紙片】",
+      "sinner": "ファウスト",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%95%E3%82%A1%E3%82%A6%E3%82%B9%E3%83%88/%E4%BA%BA%E5%B7%AE%E3%81%97%E6%8C%87%E9%81%82%E8%A1%8C%E8%80%85%EF%BC%9A%E3%80%90%E7%B4%99%E7%89%87%E3%80%91"
+    },
+    {
+      "id": "0215",
+      "name": "蜘蛛の巣 薬指の子方",
+      "sinner": "ファウスト",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%95%E3%82%A1%E3%82%A6%E3%82%B9%E3%83%88/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E8%96%AC%E6%8C%87%E3%81%AE%E5%AD%90%E6%96%B9"
+    },
+    {
+      "id": "0216",
+      "name": "夜明事務所フィクサー",
+      "sinner": "ファウスト",
+      "season": "W",
+      "seasonLabel": "ヴァルプルギスの夜",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%95%E3%82%A1%E3%82%A6%E3%82%B9%E3%83%88/%E5%A4%9C%E6%98%8E%E4%BA%8B%E5%8B%99%E6%89%80%E3%83%95%E3%82%A3%E3%82%AF%E3%82%B5%E3%83%BC"
     },
     {
       "id": "0301",
@@ -592,6 +412,15 @@ window.LCB_PERSONA_DATA = {
       "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%89%E3%83%B3%E3%82%AD%E3%83%9B%E3%83%BC%E3%83%86/%E9%BB%92%E7%8D%A3-%E6%9C%AA"
     },
     {
+      "id": "0314",
+      "name": "人差し指代行者- 開花E.G.O::代行",
+      "sinner": "ドンキホーテ",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%89%E3%83%B3%E3%82%AD%E3%83%9B%E3%83%BC%E3%83%86/%E4%BA%BA%E5%B7%AE%E3%81%97%E6%8C%87%E4%BB%A3%E8%A1%8C%E8%80%85-%E9%96%8B%E8%8A%B1E.G.O/%E4%BB%A3%E8%A1%8C"
+    },
+    {
       "id": "0401",
       "name": "LCB囚人",
       "sinner": "良秀",
@@ -707,6 +536,24 @@ window.LCB_PERSONA_DATA = {
       "seasonLabel": "Season 6",
       "rarity": 3,
       "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E8%89%AF%E7%A7%80/%E9%B4%BB%E5%9C%92%E3%81%AE%E6%94%BE%E6%B5%AA%E6%AD%A6%E8%80%85"
+    },
+    {
+      "id": "0414",
+      "name": "ロボトミーE.G.O:: 残香・寂しさ",
+      "sinner": "良秀",
+      "season": "W",
+      "seasonLabel": "ヴァルプルギスの夜",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E8%89%AF%E7%A7%80/%E3%83%AD%E3%83%9C%E3%83%88%E3%83%9F%E3%83%BCE.G.O/%E6%AE%8B%E9%A6%99%E3%83%BB%E5%AF%82%E3%81%97%E3%81%95"
+    },
+    {
+      "id": "0415",
+      "name": "蜘蛛の巣の刀",
+      "sinner": "良秀",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E8%89%AF%E7%A7%80/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E3%81%AE%E5%88%80"
     },
     {
       "id": "0501",
@@ -826,6 +673,24 @@ window.LCB_PERSONA_DATA = {
       "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%A0%E3%83%AB%E3%82%BD%E3%83%BC/%E3%83%A9%E3%83%BB%E3%83%9E%E3%83%B3%E3%83%81%E3%83%A3%E3%83%A9%E3%83%B3%E3%83%89%E3%81%AE%E7%8E%8B%E5%AD%90"
     },
     {
+      "id": "0514",
+      "name": "ロボトミーE.G.O:: ホーネット【変調】",
+      "sinner": "ムルソー",
+      "season": "W",
+      "seasonLabel": "ヴァルプルギスの夜",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%A0%E3%83%AB%E3%82%BD%E3%83%BC/%E3%83%AD%E3%83%9C%E3%83%88%E3%83%9F%E3%83%BCE.G.O/%E3%83%9B%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E3%80%90%E5%A4%89%E8%AA%BF%E3%80%91"
+    },
+    {
+      "id": "0515",
+      "name": "薬指野獣派 スチューデント",
+      "sinner": "ムルソー",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%A0%E3%83%AB%E3%82%BD%E3%83%BC/%E8%96%AC%E6%8C%87%E9%87%8E%E7%8D%A3%E6%B4%BE%E3%82%B9%E3%83%81%E3%83%A5%E3%83%BC%E3%83%87%E3%83%B3%E3%83%88"
+    },
+    {
       "id": "0601",
       "name": "LCB囚人",
       "sinner": "ホンル",
@@ -941,6 +806,33 @@ window.LCB_PERSONA_DATA = {
       "seasonLabel": "Season 6",
       "rarity": 3,
       "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%9B%E3%83%B3%E3%83%AB/%E9%B4%BB%E5%9C%92%E3%81%AE%E5%90%9B%E4%B8%BB"
+    },
+    {
+      "id": "0614",
+      "name": "蜘蛛の巣 薬指の親方",
+      "sinner": "ホンル",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%9B%E3%83%B3%E3%83%AB/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E8%96%AC%E6%8C%87%E3%81%AE%E8%A6%AA%E6%96%B9"
+    },
+    {
+      "id": "0615",
+      "name": "S社チュノックン",
+      "sinner": "ホンル",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%9B%E3%83%B3%E3%83%AB/S%E7%A4%BE%E3%83%81%E3%83%A5%E3%83%8E%E3%83%83%E3%82%AF%E3%83%B3"
+    },
+    {
+      "id": "0616",
+      "name": "東部センク協会3課",
+      "sinner": "ホンル",
+      "season": "0",
+      "seasonLabel": "恒常",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%9B%E3%83%B3%E3%83%AB/%E6%9D%B1%E9%83%A8%E3%82%BB%E3%83%B3%E3%82%AF%E5%8D%94%E4%BC%9A3%E8%AA%B2"
     },
     {
       "id": "0701",
@@ -1069,6 +961,24 @@ window.LCB_PERSONA_DATA = {
       "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%92%E3%83%BC%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%95/%E9%BB%92%E7%8D%A3-%E9%85%89%E7%AD%86%E9%A0%AD"
     },
     {
+      "id": "0715",
+      "name": "中指末兄",
+      "sinner": "ヒースクリフ",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%92%E3%83%BC%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%95/%E4%B8%AD%E6%8C%87%E6%9C%AB%E5%85%84"
+    },
+    {
+      "id": "0716",
+      "name": "蜘蛛の巣 親指の子方",
+      "sinner": "ヒースクリフ",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%92%E3%83%BC%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%95/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E8%A6%AA%E6%8C%87%E3%81%AE%E5%AD%90%E6%96%B9"
+    },
+    {
       "id": "0801",
       "name": "LCB囚人",
       "sinner": "イシュメール",
@@ -1184,6 +1094,24 @@ window.LCB_PERSONA_DATA = {
       "seasonLabel": "ヴァルプルギスの夜",
       "rarity": 3,
       "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A4%E3%82%B7%E3%83%A5%E3%83%A1%E3%83%BC%E3%83%AB/%E5%AE%9A%E4%BA%8B%E5%8B%99%E6%89%80%E4%BB%A3%E8%A1%A8"
+    },
+    {
+      "id": "0814",
+      "name": "蜘蛛の巣 中指の子方",
+      "sinner": "イシュメール",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A4%E3%82%B7%E3%83%A5%E3%83%A1%E3%83%BC%E3%83%AB/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E4%B8%AD%E6%8C%87%E3%81%AE%E5%AD%90%E6%96%B9"
+    },
+    {
+      "id": "0815",
+      "name": "LCD現場推理チーム",
+      "sinner": "イシュメール",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A4%E3%82%B7%E3%83%A5%E3%83%A1%E3%83%BC%E3%83%AB/LCD%E7%8F%BE%E5%A0%B4%E6%8E%A8%E7%90%86%E3%83%81%E3%83%BC%E3%83%A0"
     },
     {
       "id": "0901",
@@ -1312,6 +1240,24 @@ window.LCB_PERSONA_DATA = {
       "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%AD%E3%83%BC%E3%82%B8%E3%83%A3/R%E7%A4%BE%E7%AC%AC4%E7%BE%A4%E3%83%88%E3%83%8A%E3%82%AB%E3%82%A4%E3%83%81%E3%83%BC%E3%83%A0"
     },
     {
+      "id": "0915",
+      "name": "薬指野獣派 ドーセント",
+      "sinner": "ロージャ",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%AD%E3%83%BC%E3%82%B8%E3%83%A3/%E8%96%AC%E6%8C%87%E9%87%8E%E7%8D%A3%E6%B4%BE%E3%83%89%E3%83%BC%E3%82%BB%E3%83%B3%E3%83%88"
+    },
+    {
+      "id": "0916",
+      "name": "蜘蛛の巣 親指の親方",
+      "sinner": "ロージャ",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%AD%E3%83%BC%E3%82%B8%E3%83%A3/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E8%A6%AA%E6%8C%87%E3%81%AE%E8%A6%AA%E6%96%B9"
+    },
+    {
       "id": "1001",
       "name": "LCB囚人",
       "sinner": "シンクレア",
@@ -1438,6 +1384,15 @@ window.LCB_PERSONA_DATA = {
       "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%B7%E3%83%B3%E3%82%AF%E3%83%AC%E3%82%A2/%E9%BB%92%E7%8D%A3-%E9%85%89"
     },
     {
+      "id": "1015",
+      "name": "蜘蛛の巣 小指の子方",
+      "sinner": "シンクレア",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%B7%E3%83%B3%E3%82%AF%E3%83%AC%E3%82%A2/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E5%B0%8F%E6%8C%87%E3%81%AE%E5%AD%90%E6%96%B9"
+    },
+    {
       "id": "1101",
       "name": "LCB囚人",
       "sinner": "ウーティス",
@@ -1555,6 +1510,24 @@ window.LCB_PERSONA_DATA = {
       "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%82%B9/T%E7%A4%BE3%E7%B4%9A%E5%BC%B7%E5%88%B6%E5%BE%B4%E5%8F%8E%E8%81%B7%E8%81%B7%E5%93%A1"
     },
     {
+      "id": "1114",
+      "name": "LCAウアジェト 先鋒三隊隊長",
+      "sinner": "ウーティス",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%82%B9/LCA%E3%82%A6%E3%82%A2%E3%82%B8%E3%82%A7%E3%83%88%E5%85%88%E9%8B%92%E4%B8%89%E9%9A%8A%E9%9A%8A%E9%95%B7"
+    },
+    {
+      "id": "1115",
+      "name": "蜘蛛の巣 中指の親方",
+      "sinner": "ウーティス",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%82%B9/%E8%9C%98%E8%9B%9B%E3%81%AE%E5%B7%A3%E4%B8%AD%E6%8C%87%E3%81%AE%E8%A6%AA%E6%96%B9"
+    },
+    {
       "id": "1201",
       "name": "LCB囚人",
       "sinner": "グレゴール",
@@ -1670,6 +1643,33 @@ window.LCB_PERSONA_DATA = {
       "seasonLabel": "ヴァルプルギスの夜",
       "rarity": 3,
       "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%B0%E3%83%AC%E3%82%B4%E3%83%BC%E3%83%AB/%E5%A4%9C%E3%81%AE%E9%8C%90%E3%82%AB%E3%83%94%E3%82%BF%E3%83%BC%E3%83%8E"
+    },
+    {
+      "id": "1214",
+      "name": "ロボトミーE.G.O:: ランプ",
+      "sinner": "グレゴール",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%B0%E3%83%AC%E3%82%B4%E3%83%BC%E3%83%AB/%E3%83%AD%E3%83%9C%E3%83%88%E3%83%9F%E3%83%BCE.G.O/%E3%83%A9%E3%83%B3%E3%83%97"
+    },
+    {
+      "id": "1215",
+      "name": "LCE E.G.O::AEDD",
+      "sinner": "グレゴール",
+      "season": "7",
+      "seasonLabel": "Season 7",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%B0%E3%83%AC%E3%82%B4%E3%83%BC%E3%83%AB/LCEE.G.O/AEDD"
+    },
+    {
+      "id": "1216",
+      "name": "夜明事務所代表",
+      "sinner": "グレゴール",
+      "season": "W",
+      "seasonLabel": "ヴァルプルギスの夜",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%B0%E3%83%AC%E3%82%B4%E3%83%BC%E3%83%AB/%E5%A4%9C%E6%98%8E%E4%BA%8B%E5%8B%99%E6%89%80%E4%BB%A3%E8%A1%A8"
     }
   ]
 };
