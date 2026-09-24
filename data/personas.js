@@ -2,10 +2,28 @@ window.LCB_PERSONA_DATA = {
   "meta": {
     "sourceUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC",
     "templateUrl": "https://wikiwiki.jp/lcbwiki/%3ATemplate/%E4%BA%BA%E6%A0%BC",
-    "fetchedAt": "2026-09-17",
-    "count": 185
+    "fetchedAt": "2026-09-24",
+    "count": 187
   },
   "personas": [
+    {
+      "id": "0816",
+      "name": "オートクチュール:: ル・ルージュ ブティーク",
+      "sinner": "イシュメール",
+      "season": "8",
+      "seasonLabel": "Season 8",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A4%E3%82%B7%E3%83%A5%E3%83%A1%E3%83%BC%E3%83%AB/%E3%82%AA%E3%83%BC%E3%83%88%E3%82%AF%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB/%E3%83%AB%E3%83%BB%E3%83%AB%E3%83%BC%E3%82%B8%E3%83%A5%E3%83%96%E3%83%86%E3%82%A3%E3%83%BC%E3%82%AF"
+    },
+    {
+      "id": "0416",
+      "name": "オートクチュール:: ル・ノワール シューズフロア",
+      "sinner": "良秀",
+      "season": "8",
+      "seasonLabel": "Season 8",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E8%89%AF%E7%A7%80/%E3%82%AA%E3%83%BC%E3%83%88%E3%82%AF%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB/%E3%83%AB%E3%83%BB%E3%83%8E%E3%83%AF%E3%83%BC%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA%E3%83%95%E3%83%AD%E3%82%A2"
+    },
     {
       "id": "0101",
       "name": "LCB囚人",
