@@ -2,10 +2,19 @@ window.LCB_PERSONA_DATA = {
   "meta": {
     "sourceUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC",
     "templateUrl": "https://wikiwiki.jp/lcbwiki/%3ATemplate/%E4%BA%BA%E6%A0%BC",
-    "fetchedAt": "2026-09-24",
-    "count": 187
+    "fetchedAt": "2026-10-01",
+    "count": 188
   },
   "personas": [
+    {
+      "id": "0917",
+      "name": "オートクチュール:: お直し室",
+      "sinner": "ロージャ",
+      "season": "8",
+      "seasonLabel": "Season 8",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%AD%E3%83%BC%E3%82%B8%E3%83%A3/%E3%82%AA%E3%83%BC%E3%83%88%E3%82%AF%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB/%E3%81%8A%E7%9B%B4%E3%81%97%E5%AE%A4"
+    },
     {
       "id": "0816",
       "name": "オートクチュール:: ル・ルージュ ブティーク",
