@@ -2,10 +2,19 @@ window.LCB_PERSONA_DATA = {
   "meta": {
     "sourceUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC",
     "templateUrl": "https://wikiwiki.jp/lcbwiki/%3ATemplate/%E4%BA%BA%E6%A0%BC",
-    "fetchedAt": "2026-10-01",
-    "count": 188
+    "fetchedAt": "2026-10-08",
+    "count": 189
   },
   "personas": [
+    {
+      "id": "0315",
+      "name": "オートクチュール:: ル・ノワール ブランドマネージャー",
+      "sinner": "ドンキホーテ",
+      "season": "8",
+      "seasonLabel": "Season 8",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%89%E3%83%B3%E3%82%AD%E3%83%9B%E3%83%BC%E3%83%86/%E3%82%AA%E3%83%BC%E3%83%88%E3%82%AF%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB/%E3%83%AB%E3%83%BB%E3%83%8E%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC"
+    },
     {
       "id": "0917",
       "name": "オートクチュール:: お直し室",
