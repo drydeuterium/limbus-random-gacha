@@ -2,10 +2,19 @@ window.LCB_PERSONA_DATA = {
   "meta": {
     "sourceUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC",
     "templateUrl": "https://wikiwiki.jp/lcbwiki/%3ATemplate/%E4%BA%BA%E6%A0%BC",
-    "fetchedAt": "2026-10-08",
-    "count": 189
+    "fetchedAt": "2026-10-15",
+    "count": 190
   },
   "personas": [
+    {
+      "id": "1016",
+      "name": "オートクチュール:: ル・ルージュ 赤き神",
+      "sinner": "シンクレア",
+      "season": "8",
+      "seasonLabel": "Season 8",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%B7%E3%83%B3%E3%82%AF%E3%83%AC%E3%82%A2/%E3%82%AA%E3%83%BC%E3%83%88%E3%82%AF%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB/%E3%83%AB%E3%83%BB%E3%83%AB%E3%83%BC%E3%82%B8%E3%83%A5%E8%B5%A4%E3%81%8D%E7%A5%9E"
+    },
     {
       "id": "0315",
       "name": "オートクチュール:: ル・ノワール ブランドマネージャー",
