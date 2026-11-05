@@ -2,10 +2,28 @@ window.LCB_PERSONA_DATA = {
   "meta": {
     "sourceUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC",
     "templateUrl": "https://wikiwiki.jp/lcbwiki/%3ATemplate/%E4%BA%BA%E6%A0%BC",
-    "fetchedAt": "2026-10-29",
-    "count": 190
+    "fetchedAt": "2026-11-05",
+    "count": 192
   },
   "personas": [
+    {
+      "id": "0717",
+      "name": "オートクチュール:: ル・ルージュ 裁縫の王",
+      "sinner": "ヒースクリフ",
+      "season": "8",
+      "seasonLabel": "Season 8",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%92%E3%83%BC%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%95/%E3%82%AA%E3%83%BC%E3%83%88%E3%82%AF%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB/%E3%83%AB%E3%83%BB%E3%83%AB%E3%83%BC%E3%82%B8%E3%83%A5%E8%A3%81%E7%B8%AB%E3%81%AE%E7%8E%8B"
+    },
+    {
+      "id": "0617",
+      "name": "オートクチュール:: ル・ノワール 3F放送室",
+      "sinner": "ホンル",
+      "season": "8",
+      "seasonLabel": "Season 8",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%9B%E3%83%B3%E3%83%AB/%E3%82%AA%E3%83%BC%E3%83%88%E3%82%AF%E3%83%81%E3%83%A5%E3%83%BC%E3%83%AB/%E3%83%AB%E3%83%BB%E3%83%8E%E3%83%AF%E3%83%BC%E3%83%AB3F%E6%94%BE%E9%80%81%E5%AE%A4"
+    },
     {
       "id": "1016",
       "name": "オートクチュール:: ル・ルージュ 赤き神",
