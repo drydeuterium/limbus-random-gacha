@@ -2,10 +2,37 @@ window.LCB_PERSONA_DATA = {
   "meta": {
     "sourceUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC",
     "templateUrl": "https://wikiwiki.jp/lcbwiki/%3ATemplate/%E4%BA%BA%E6%A0%BC",
-    "fetchedAt": "2026-11-05",
-    "count": 192
+    "fetchedAt": "2026-11-12",
+    "count": 195
   },
   "personas": [
+    {
+      "id": "1116",
+      "name": "楔事務所代表",
+      "sinner": "ウーティス",
+      "season": "W",
+      "seasonLabel": "ヴァルプルギスの夜",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%82%B9/%E6%A5%94%E4%BA%8B%E5%8B%99%E6%89%80%E4%BB%A3%E8%A1%A8"
+    },
+    {
+      "id": "1017",
+      "name": "楔事務所フィクサー",
+      "sinner": "シンクレア",
+      "season": "W",
+      "seasonLabel": "ヴァルプルギスの夜",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%82%B7%E3%83%B3%E3%82%AF%E3%83%AC%E3%82%A2/%E6%A5%94%E4%BA%8B%E5%8B%99%E6%89%80%E3%83%95%E3%82%A3%E3%82%AF%E3%82%B5%E3%83%BC"
+    },
+    {
+      "id": "0316",
+      "name": "楔事務所フィクサー",
+      "sinner": "ドンキホーテ",
+      "season": "W",
+      "seasonLabel": "ヴァルプルギスの夜",
+      "rarity": 3,
+      "detailUrl": "https://wikiwiki.jp/lcbwiki/%E4%BA%BA%E6%A0%BC/%E3%83%89%E3%83%B3%E3%82%AD%E3%83%9B%E3%83%BC%E3%83%86/%E6%A5%94%E4%BA%8B%E5%8B%99%E6%89%80%E3%83%95%E3%82%A3%E3%82%AF%E3%82%B5%E3%83%BC"
+    },
     {
       "id": "0717",
       "name": "オートクチュール:: ル・ルージュ 裁縫の王",
